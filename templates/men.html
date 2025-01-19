@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/men.css') }}">
+</head>
+<body>
+    <div class="bg-gif"></div>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('women') }}">Women</a></li>
+                    <li><a href="{{ url_for('children') }}">Children</a></li>
+                    <li><a href="{{ url_for('premium') }}">Premium</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="w">
+            <img src="{{ url_for('static', filename='images/download (1).gif') }}" alt="Product Image" class="w-image">
+            <div class="content">
+                <h1>Mens Shoes</h1>
+                <p>
+                    Experience the future of footwear with our latest model, designed for comfort and style. 
+                    Elevate your game today.
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="product-card" onclick="goToProductPage('/a')">
+                <img src="{{ url_for('static', filename='images/133.png') }}" alt="Product">
+                <p></p>
+            </div>
+            <div class="product-card" onclick="goToProductPage('/aa')">
+                <img src="{{ url_for('static', filename='images/35 men.jpg') }}" alt="Product">
+                <p></p>
+            </div>
+            <div class="product-card" onclick="goToProductPage('/aaa')">
+                <img src="{{ url_for('static', filename='images/42 men.jpg') }}" alt="Product">
+                <p></p>
+            </div>
+            <div class="product-card" onclick="goToProductPage('/aaaa')">
+                <img src="{{ url_for('static', filename='images/39 men.jpg') }}" alt="Product">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <script></script>
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                document.querySelector(link.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.05)';
+                card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            });
+        });
+
+        function goToProductPage(url) {
+            window.location.href = url;
+        }
+
+        const products = document.querySelectorAll('.product-card');
+        products.forEach((product, index) => {
+            product.style.opacity = 0;
+            product.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                product.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                product.style.opacity = 1;
+                product.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+    </script>
+</body>
+</html>

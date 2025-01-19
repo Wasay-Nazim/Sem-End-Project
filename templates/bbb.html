@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Collection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bbb.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+                    <li><a href="{{ url_for('products')}}">Products</a></li>
+                    <li><a href="{{ url_for('assistant')}}">Talk with our assistant</a></li>
+                    <li><a href="{{ url_for('login')}}">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="collection" class="shoe-collection">
+        <div class="shoe">
+            <img src="{{ url_for('static', filename='images/women fixer (16).png') }}" alt="Shoe 1">
+            <h3></h3>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <span>1</span>
+                <button class="increment">+</button>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shoe">
+            <img src="{{ url_for('static', filename='images/women fixer (17).png') }}" alt="Shoe 2">
+            <h3></h3>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <span>1</span>
+                <button class="increment">+</button>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shoe">
+            <img src="{{ url_for('static', filename='images/women fixer (18).png') }}" alt="Shoe 3">
+            <h3></h3>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <span>1</span>
+                <button class="increment">+</button>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shoe">
+            <img src="{{ url_for('static', filename='images/women fixer (19).png') }}" alt="Shoe 4">
+            <h3></h3>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <span>1</span>
+                <button class="increment">+</button>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shoe">
+            <img src="{{ url_for('static', filename='images/women fixer (20).png') }}" alt="Shoe 5">
+            <h3></h3>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <span>1</span>
+                <button class="increment">+</button>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="shoe">
+            <img src="{{ url_for('static', filename='images/18.jpg') }}" alt="Shoe 6">
+            <h3></h3>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <span>1</span>
+                <button class="increment">+</button>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.increment').forEach(button => {
+            button.addEventListener('click', () => {
+                const span = button.previousElementSibling;
+                let quantity = parseInt(span.innerText);
+                if (quantity < 10) {
+                    span.innerText = quantity + 1;
+                }
+            });
+        });
+
+        document.querySelectorAll('.decrement').forEach(button => {
+            button.addEventListener('click', () => {
+                const span = button.nextElementSibling;
+                let quantity = parseInt(span.innerText);
+                if (quantity > 1) {
+                    span.innerText = quantity - 1;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

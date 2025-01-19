@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+                    <li><a href="{{ url_for('products')}}">products</a></li>
+                    <li><a href="{{ url_for('assistant')}}">Talk with our assistant</a></li>
+                    <li><a href="{{ url_for('login')}}">login</a></li>
+                    <li><a href="{{ url_for('checkout')}}">Checkout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project">
+        <div class="background-gif"></div>
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/Nike Alphaballer.gif') }}" alt="Adidas EQT GPR" class="shoe-image">
+            <h1>WTKM Shoes</h1>
+            <p>Experience the future of comfort and style.</p>
+            <li><a href="{{ url_for('products')}}" class="cta-button">Shop Now</a></li>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy;  All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const ctaButton = document.querySelector('.cta-button');
+        const navLinks = document.querySelectorAll('nav a');
+        const header = document.querySelector('header');
+
+        ctaButton.addEventListener('click', () => {
+            alert('Added to cart!');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                console.log(`Link clicked: ${link.textContent}`);
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>

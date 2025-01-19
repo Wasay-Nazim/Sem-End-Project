@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: #333; 
+    overflow-x: hidden;
+}
+
+.bg-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/Reshape.gif'); 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+header {
+    background: linear-gradient(45deg, #8E44AD, #2980B9); 
+    padding: 20px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.9); 
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    margin: 5px 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF; 
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: transparent;
+    position: relative;
+}
+
+nav a:hover, nav a:focus {
+    background: linear-gradient(45deg, #8E44AD, #2980B9); 
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff; 
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+nav a:hover:before, nav a:focus:before {
+    transform: scaleX(1);
+}
+
+nav a.active {
+    font-weight: 700;
+    color: #F39C12; 
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav li {
+        margin: 10px 0;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.project-image {
+    max-width: 40%;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.project-image:hover {
+    transform: scale(1.1);
+}
+
+.project .content {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.project h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: slideInFromLeft 1s;
+}
+
+.project p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    animation: slideInFromLeft 1.2s;
+}
+
+.project button {
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    color: #ff7e5f; 
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project button:hover {
+    background-color: #ff6f61;
+    color: white;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    width: 90%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.product-card {
+    background-color: #ffffff00; 
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-card p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #ff7e5f; 
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

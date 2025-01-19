@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+
+    <div class="bg-gif"></div>
+
+    <div class="container">
+        <div class="content">
+            <div class="info">
+                <h1>Join Us Today</h1>
+                <p>Register now to unlock amazing features. Our community is waiting for you!</p>
+            </div>
+
+            <div class="form-wrapper">
+                <form>
+                    <h2>Register Now</h2>
+
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Choose your username" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+                    <button type="submit">Create Account</button>
+
+                    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

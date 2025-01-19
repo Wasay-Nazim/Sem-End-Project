@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ShoeStore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            
+        </div>
+    </header>
+
+    <section id="checkout" class="checkout-container">
+        <h2>Order Summary</h2>
+        <div class="checkout-items">
+            <div class="checkout-item">
+                <img src="{{ url_for('static', filename='images/46 men.jpg') }}" alt="Shoe 1">
+                <div class="item-details">
+                    <h3>Classic Sneakers</h3>
+                    <p>Qty: 2</p>
+                    <p>Price: 6000PKR</p>
+                </div>
+            </div>
+            <div class="checkout-item">
+                <img src="{{ url_for('static', filename='images/59 children.jpg') }}" alt="Shoe 2">
+                <div class="item-details">
+                    <h3>Running Shoes</h3>
+                    <p>Qty: 1</p>
+                    <p>Price: 2500PKR</p>
+                </div>
+            </div>
+            <div class="checkout-item">
+                <img src="{{ url_for('static', filename='images/15.jpg') }}" alt="Shoe 3">
+                <div class="item-details">
+                    <h3>Formal Shoes</h3>
+                    <p>Qty: 1</p>
+                    <p>Price: 1500PKR</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <div class="summary-item">
+                <p>Subtotal:</p>
+                <p>10,000PKR</p>
+            </div>
+            <div class="summary-item">
+                <p>Shipping:</p>
+                <p>200 PKR</p>
+            </div>
+            <div class="summary-item total">
+                <p>Total:</p>
+                <p>10,200PKR</p>
+            </div>
+            <div class="summary-item">
+                <a href="{{ url_for('thankyou')}}" class="checkout-btn">Buy now</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

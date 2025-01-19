@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aboutus.css') }}">
+</head>
+<body>
+
+    <div class="bg-gif"></div>
+
+    <div class="container">
+        <div class="content">
+            <div class="info">
+                <h1>About Us</h1>
+                <p>Welcome to our E-commerce store, where style meets comfort! We are passionate about providing high-quality footwear that not only complements your wardrobe but also supports your active lifestyle. Our collection is thoughtfully curated to offer a diverse range of shoes, from trendy designs to timeless classics, ensuring there's something for everyone. At [Your Brand Name], we prioritize craftsmanship, using premium materials to deliver durability and unmatched comfort. Whether you're stepping out for an adventure, hitting the gym, or making a fashion statement, we're here to keep you moving in style. Thank you for choosing us to be a part of your journey, one step at a time!</p>
+            </div>
+            <div class="team">
+                <h2>Our Team</h2>
+                <p>Our team is composed of passionate individuals who bring their expertise and creativity to every project. We strive to push boundaries and redefine what’s possible in the world of luxury goods.</p>
+            </div>
+        </div>
+
+        <div class="form-wrapper">
+            <form action="#">
+                <h2>Contact Us</h2>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
