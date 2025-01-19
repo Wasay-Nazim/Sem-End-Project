@@ -1,13 +1,18 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    color: #333;
+    color: #000000;
     overflow-x: hidden;
-    background: #f4f4f4;
+    background: #0e0d0d;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 730px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -200,7 +205,7 @@ nav a:hover:before, nav a:focus:before {
 }
 
 footer {
-    background-color: #34495E;
+    background-color: #080808;
     color: #BDC3C7;
     text-align: center;
     padding: 20px 0;

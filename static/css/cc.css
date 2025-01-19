@@ -36,10 +36,6 @@ body {
     transition: color 0.3s;
 }
 
-.navbar a:hover {
-    color: #f39c12;
-}
-
 nav ul {
     list-style: none;
     margin: 0;
