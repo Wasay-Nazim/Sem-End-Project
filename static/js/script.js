@@ -75,7 +75,7 @@ function processCommand(command) {
             window.open('/register');
         } else if (command.includes('go to welcome')) {
             response = 'Redirecting you to the welcome page.';
-            window.open('/welcome');
+            window.open('/');
         } else if (command.includes('go to home')) {
             response = 'Redirecting you to the home page.';
             window.open('/home');
@@ -88,7 +88,7 @@ function processCommand(command) {
         } else if (command.includes('go to women')) {
             response = 'Redirecting you to the women\'s section.';
             window.open('/women');
-        } else if (command.includes('go to children page')) {
+        } else if (command.includes('go to kids')) {
             response = 'Redirecting you to the children\'s section.';
             window.open('/children');
         } else if (command.includes('go to premium')) {
