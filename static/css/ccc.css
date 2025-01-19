@@ -62,7 +62,7 @@ nav a {
 }
 
 nav a:hover, nav a:focus {
-    background: linear-gradient(45deg, #8E44AD, #2980B9);
+    background: linear-gradient(45deg, #445cad, #411679);
     color: #fff;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
