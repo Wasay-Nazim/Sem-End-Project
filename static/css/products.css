@@ -101,7 +101,7 @@ nav a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #9370db, #4b0082);
+    background: linear-gradient(135deg, #9470db75, #4c00826c);
     color: white;
     border-radius: 20px;
     padding: 40px;
