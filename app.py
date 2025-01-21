@@ -9,12 +9,19 @@ users = {}
 
 
 @app.route('/')
-def welcome():
+def root():
     return redirect(url_for('welcome'))
 
 @app.route('/home')
 def home():
+    
+    if 'user' not in session:
+        return redirect(url_for('login'))
     return render_template('home.html')
+
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -25,8 +32,8 @@ def login():
         user = users.get(email)
         if user and check_password_hash(user['password'], password):
             session['user'] = email
-            return redirect(url_for('home'))
-        
+            return redirect(url_for('home'))  
+            
         flash('Invalid email or password', 'error')
         return redirect(url_for('login'))
     
@@ -55,14 +62,10 @@ def register():
     
     return render_template('register.html')
 
-
-
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     return redirect(url_for('welcome'))
-
-
 @app.route('/products')
 def products():
     return render_template('products.html')
