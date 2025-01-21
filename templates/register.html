@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
-
     <div class="bg-gif"></div>
-
     <div class="container">
         <div class="content">
             <div class="info">
                 <h1>Join Us Today</h1>
                 <p>Register now to unlock amazing features. Our community is waiting for you!</p>
             </div>
-
             <div class="form-wrapper">
-                <form>
+                <form method="POST" action="{{ url_for('register') }}">
                     <h2>Register Now</h2>
 
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Choose your username" required>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            <div class="flash-messages">
+                                {% for category, message in messages %}
+                                    <div class="flash {{ category }}">{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -31,13 +35,14 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Create a password" required>
 
-                    <button type="submit">Create Account</button>
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
 
+                    <button type="submit">Create Account</button>
                     <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
                 </form>
             </div>
         </div>
     </div>
-
 </body>
 </html>

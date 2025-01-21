@@ -180,3 +180,25 @@ a {
 a:hover {
     color: #2C6B2F;
 }
+.flash-messages {
+    margin: 15px 0;
+}
+
+.flash {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.flash.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.flash.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
