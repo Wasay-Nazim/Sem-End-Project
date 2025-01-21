@@ -2,12 +2,12 @@ from flask import Flask, render_template, redirect, url_for, request, session, f
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-1234'  # Change for production
+app.secret_key = 'your-secret-key-1234'  
 
-# Temporary user storage (replace with database in production)
+
 users = {}
 
-# ------------------- Authentication Routes -------------------
+
 @app.route('/')
 def welcome():
     return redirect(url_for('welcome'))
@@ -55,14 +55,14 @@ def register():
     
     return render_template('register.html')
 
-# ... rest of the routes remain unchanged ...
+
 
 @app.route('/logout')
 def logout():
     session.pop('user', None)
     return redirect(url_for('welcome'))
 
-# ------------------- Product Category Routes -------------------
+
 @app.route('/products')
 def products():
     return render_template('products.html')
@@ -83,7 +83,7 @@ def children():
 def premium():
     return render_template('premium.html')
 
-# ------------------- Product Collection Routes -------------------
+
 @app.route('/a')
 def a():
     return render_template('a.html')
@@ -148,9 +148,8 @@ def ddd():
 def dddd():
     return render_template('dddd.html')
 
-# ------------------- Other Pages -------------------
-@app.route('/about_us')
-def about_us():
+@app.route('/aboutus')
+def aboutus():
     return render_template('aboutus.html')
 
 @app.route('/assistant')
